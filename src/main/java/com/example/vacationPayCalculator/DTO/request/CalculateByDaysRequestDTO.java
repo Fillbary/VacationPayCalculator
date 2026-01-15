@@ -10,6 +10,27 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
+/**
+ * Data Transfer Object (DTO) для запроса расчета отпускных по количеству дней.
+ * <p>
+ * Содержит параметры для расчета отпускных выплат на основе указанного количества
+ * дней отпуска. Расчет выполняется без учета конкретных дат и праздников.
+ * </p>
+ *
+ * <p>Пример использования:</p>
+ * <pre>
+ * CalculateByDaysRequestDTO request = new CalculateByDaysRequestDTO(
+ *     new BigDecimal("50000.00"),
+ *     14
+ * );
+ * </pre>
+ *
+ * <p>Примечание: максимальное количество дней отпуска ограничено 28 днями,
+ * что соответствует стандартному ежегодному оплачиваемому отпуску.</p>
+ *
+ * @see CalculateByDatesRequestDTO
+ * @see com.example.vacationPayCalculator.DTO.response.CalculateResponseDTO
+ */
 @Data
 @AllArgsConstructor
 public class CalculateByDaysRequestDTO {
